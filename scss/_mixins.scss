@@ -1,0 +1,55 @@
+//clearfix
+@mixin clearfix() {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+// border-radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//box shadow
+@mixin box-shadow($h, $v, $blur, $color, $inset:"") {
+    -webkit-box-shadow:$h $v $blur $color #{$inset};
+    -moz-box-shadow:$h $v $blur $color #{$inset};
+    box-shadow:$h $v $blur $color #{$inset};
+}
+
+// media queries
+//desktop
+@mixin desktop() {
+    @media(max-width: $desktop-media) {
+        @content;
+    }
+} //pad
+@mixin pad() {
+    @media(max-width: $pad-media) {
+        @content;
+    }
+} //phone ~ pad
+@mixin padToPhone() {
+    @media(max-width: $padToPhone-media) {
+        @content;
+    }
+} // phone
+@mixin phone() {
+    @media(max-width: $phone-media) {
+        @content;
+    }
+}
+
+// 2 cols
+@mixin col-two {
+    float: left;
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 10px;
+}
