@@ -1,5 +1,7 @@
 var select = document.querySelector('#select-area');
+var toTop = document.querySelector('.toTop');
 var zone = new Set();
+var scrollTrigger = 200;
 var xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
 window.addEventListener('load', getOptions);
 //取得選項資料
@@ -47,3 +49,24 @@ function makeReq(method, url) {
 }
 
 xhr.send(null);
+// back to top
+
+function showToTop(e) {
+    var scrollPosition = $(window).scrollTop();
+    if (scrollPosition > scrollTrigger) {
+        $('.toTop').addClass('show');
+    } else {
+        $('.toTop').removeClass('show');
+    }
+}
+
+window.addEventListener('scroll', showToTop);
+
+function returnToTop(e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: 0
+    }, 800)
+};
+
+toTop.addEventListener('click', returnToTop)

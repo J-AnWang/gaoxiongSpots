@@ -291,7 +291,10 @@ ul {
   right: 40px;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
-  transition: all .3s; }
+  transition: all .3s;
+  opacity: 0; }
   .toTop:hover {
     -webkit-filter: hue-rotate(180deg);
     filter: hue-rotate(180deg); }
+  .toTop.show {
+    opacity: 1; }
