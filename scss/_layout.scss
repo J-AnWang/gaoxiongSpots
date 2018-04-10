@@ -28,3 +28,101 @@
         }
     }
 }
+
+.hot {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    @include box-shadow(0, 0, 10px, rgba(0, 0, 0, .2));
+    background: white;
+    transform: translateY(-60px);
+    h3 {
+        margin-bottom: 15px;
+        font-size: $font-l + 2;
+        font-weight: normal;
+    }
+    li {
+        float: left;
+        width: 20%;
+        margin: 0 1.875%;
+        a {
+            display: block;
+            width: 100%;
+            color: white;
+            font-size: $font-m * 1.5;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            &.purple {
+                background: $purple;
+            }
+            &.orange {
+                background: $orange;
+            }
+            &.yellow {
+                background: $yellow;
+            }
+            &.blue {
+                background: $main-color;
+            }
+            &:hover {
+                filter: hue-rotate(180deg);
+                color: white;
+            }
+        }
+    }
+}
+
+.line {
+    transform: translateY(-30px);
+    hr {
+        overflow: visible;
+        padding: 0;
+        border: none;
+        border-top: 2px dashed $main-color;
+        text-align: center;
+    }
+    hr:after {
+        content: url(../imgs/icons_down_test.png);
+        width: 30px;
+        height: 30px;
+        border: 2px solid $main-color;
+        border-radius: 15px;
+        display: inline-block;
+        position: relative;
+        top: -15px;
+        color: $main-color;
+        font-size: $font-l;
+        background: white;
+    }
+}
+
+#footer {
+    padding: 10px 0;
+    background: $main-color;
+    text-align: center;
+    h3,
+    p {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: lighter;
+    }
+    p,
+    p a {
+        color: $yellow;
+        transition: all .3s;
+    }
+    a:hover {
+        color: white;
+    }
+}
+
+.toTop {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    transition: all .3s;
+    &:hover {
+        filter: hue-rotate(180deg);
+    }
+}

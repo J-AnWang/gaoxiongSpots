@@ -41,7 +41,8 @@ pre {
   font-family: monospace, monospace;
   font-size: 1em; }
 
-a {
+a,
+a:hover {
   background-color: transparent;
   text-decoration: none;
   color: #000; }
@@ -202,3 +203,95 @@ ul {
       border: 3px solid #FEFFFE;
       border-radius: 5%;
       background: rgba(255, 255, 255, 0.6); }
+
+.hot {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) ;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) ;
+  background: white;
+  -webkit-transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  transform: translateY(-60px); }
+  .hot h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: normal; }
+  .hot li {
+    float: left;
+    width: 20%;
+    margin: 0 1.875%; }
+    .hot li a {
+      display: block;
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      font-weight: lighter;
+      letter-spacing: 1px; }
+      .hot li a.purple {
+        background: #8A82CB; }
+      .hot li a.orange {
+        background: #FEA782; }
+      .hot li a.yellow {
+        background: #F5CF05; }
+      .hot li a.blue {
+        background: #5599C8; }
+      .hot li a:hover {
+        -webkit-filter: hue-rotate(180deg);
+        filter: hue-rotate(180deg);
+        color: white; }
+
+.line {
+  -webkit-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  transform: translateY(-30px); }
+  .line hr {
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: 2px dashed #5599C8;
+    text-align: center; }
+  .line hr:after {
+    content: url(../imgs/icons_down_test.png);
+    width: 30px;
+    height: 30px;
+    border: 2px solid #5599C8;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    color: #5599C8;
+    font-size: 18px;
+    background: white; }
+
+#footer {
+  padding: 10px 0;
+  background: #5599C8;
+  text-align: center; }
+  #footer h3,
+  #footer p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: lighter; }
+  #footer p,
+  #footer p a {
+    color: #F5CF05;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+  #footer a:hover {
+    color: white; }
+
+.toTop {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .toTop:hover {
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg); }
