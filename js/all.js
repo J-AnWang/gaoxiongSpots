@@ -1,6 +1,7 @@
 var select = document.querySelector('#select-area');
 var toTop = document.querySelector('.toTop');
 var content = document.querySelector('#content .container');
+var footer = document.querySelector('#footer');
 var zone = new Set();
 var scrollTrigger = 200;
 var xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
@@ -117,10 +118,13 @@ function renderData(e) {
                 renderContent += spot;
             }
         }
+
         if (renderContent === '') {
             content.lastElementChild.innerHTML = `<p class="noData">查無資料</p>`;
+            footer.className = '';
         } else {
             content.lastElementChild.innerHTML = renderContent;
+            footer.className = 'show';
         }
     } else {
         alert('Sorry, our server have something wrong. Please try again.');
