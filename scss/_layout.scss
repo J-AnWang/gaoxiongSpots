@@ -46,7 +46,7 @@
         float: left;
         width: 20%;
         margin: 0 1.875%;
-        a {
+        button {
             display: block;
             width: 100%;
             color: white;
@@ -65,7 +65,8 @@
             &.blue {
                 background: $main-color;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 filter: hue-rotate(180deg);
                 color: white;
             }

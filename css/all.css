@@ -224,22 +224,22 @@ ul {
     float: left;
     width: 20%;
     margin: 0 1.875%; }
-    .hot li a {
+    .hot li button {
       display: block;
       width: 100%;
       color: white;
       font-size: 24px;
       font-weight: lighter;
       letter-spacing: 1px; }
-      .hot li a.purple {
+      .hot li button.purple {
         background: #8A82CB; }
-      .hot li a.orange {
+      .hot li button.orange {
         background: #FEA782; }
-      .hot li a.yellow {
+      .hot li button.yellow {
         background: #F5CF05; }
-      .hot li a.blue {
+      .hot li button.blue {
         background: #5599C8; }
-      .hot li a:hover {
+      .hot li button:hover, .hot li button:focus {
         -webkit-filter: hue-rotate(180deg);
         filter: hue-rotate(180deg);
         color: white; }
