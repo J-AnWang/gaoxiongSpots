@@ -93,8 +93,7 @@ function renderData(e) {
                     price = data[i].Ticketinfo;
                 let spot = `
                     <div class="col-two">
-                        <div class="img-zone">
-                            <img src="${img}" alt="spot"/>
+                        <div class="img-zone" style="background-image: url(${img});">
                             <h3>${name}</h3>
                             <p>${zone}</p>
                         </div>
@@ -111,7 +110,7 @@ function renderData(e) {
                                 <img src="imgs/icons_phone.png" alt="tel"/>
                                 <span>${tel}</span>
                             </li>
-                            <p>${price}</p>
+                            <p><img src="imgs/icons_tag.png" alt="tel"/>${price}</p>
                         </ul>
                     </div>
                 `;

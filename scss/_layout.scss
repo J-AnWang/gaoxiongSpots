@@ -1,3 +1,7 @@
+body {
+    background: #F7F7F7;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -98,6 +102,71 @@
     }
 }
 
+#content {
+    .title {
+        color: $purple;
+        text-align: center;
+        font-size: $font-l * 2;
+        font-weight: lighter;
+        letter-spacing: 1px;
+    }
+    .spots {
+        margin-top: 25px;
+        .col-two {
+            margin-bottom: 35px;
+            @include col-two;
+            @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, .3));
+        }
+        .img-zone {
+            position: relative;
+            height: 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 60%;
+            color: white;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            h3 {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                font-size: $font-m * 1.5;
+                font-weight: lighter;
+            }
+            p {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                font-size: $font-s;
+                font-weight: lighter;
+            }
+        }
+        .detail {
+            position: relative;
+            padding: 10px;
+            li {
+                line-height: 35px;
+                span {
+                    margin-left: 5px;
+                }
+            }
+            p {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                img {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .noData {
+        text-align: center;
+        font-style: italic;
+        font-size: $font-m *1.5;
+    }
+}
+
 #footer {
     padding: 10px 0;
     background: $main-color;
@@ -120,8 +189,8 @@
 
 .toTop {
     position: absolute;
-    bottom: 40px;
-    right: 40px;
+    bottom: 100px;
+    right: 30px;
     transition: all .3s;
     opacity: 0;
     &:hover {
