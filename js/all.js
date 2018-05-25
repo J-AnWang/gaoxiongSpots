@@ -4,7 +4,8 @@ const content = document.querySelector('#content .container');
 const footer = document.querySelector('#footer');
 const zone = new Set();
 const scrollTrigger = 200;
-const xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
+// const xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
+const xhr = makeReq('https://jaw09.github.io/gaoxiongSpots/resources/data.json')
 window.addEventListener('load', getOptions);
 
 //取得選項資料
