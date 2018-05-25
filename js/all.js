@@ -5,11 +5,13 @@ const footer = document.querySelector('#footer');
 const zone = new Set();
 const scrollTrigger = 200;
 // const xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
-const xhr = makeReq('https://jaw09.github.io/gaoxiongSpots/resources/data.json')
+let xhr;
 window.addEventListener('load', getOptions);
+
 
 //取得選項資料
 function getOptions(e) {
+    xhr = makeReq('get', 'https://jaw09.github.io/gaoxiongSpots/resources/data.json');
     if (xhr) {
         xhr.onload = function () {
             if (xhr.status == 200) {
@@ -32,6 +34,7 @@ function getOptions(e) {
         console.log('Cannot create an XMLHTTP instance')
         return false;
     }
+    xhr.send(null);
 }
 //渲染高雄區的選項
 function renderOptions(data) {
@@ -44,16 +47,15 @@ function renderOptions(data) {
 }
 // 用來驗證瀏覽器是否有支援CORS Request
 function makeReq(method, url) {
-    const xhr = new XMLHttpRequest();
-    if ('withCredentials' in xhr) {
-        xhr.open(method, url, true);
+    const getData = new XMLHttpRequest();
+    if ('withCredentials' in getData) {
+        getData.open(method, url, true);
     } else {
-        xhr = null;
+        getData = null;
     }
-    return xhr;
+    return getData;
 }
 
-xhr.send(null);
 // back to top
 
 function showToTop(e) {
