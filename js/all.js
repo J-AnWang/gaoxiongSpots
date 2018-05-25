@@ -1,10 +1,10 @@
-var select = document.querySelector('#select-area');
-var toTop = document.querySelector('.toTop');
-var content = document.querySelector('#content .container');
-var footer = document.querySelector('#footer');
-var zone = new Set();
-var scrollTrigger = 200;
-var xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
+const select = document.querySelector('#select-area');
+const toTop = document.querySelector('.toTop');
+const content = document.querySelector('#content .container');
+const footer = document.querySelector('#footer');
+const zone = new Set();
+const scrollTrigger = 200;
+const xhr = makeReq('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97');
 window.addEventListener('load', getOptions);
 
 //取得選項資料
@@ -35,7 +35,7 @@ function getOptions(e) {
 //渲染高雄區的選項
 function renderOptions(data) {
     data.forEach(zone => {
-        var opt = document.createElement('option');
+        const opt = document.createElement('option');
         opt.value = zone;
         opt.textContent = zone;
         select.appendChild(opt);
@@ -43,7 +43,7 @@ function renderOptions(data) {
 }
 // 用來驗證瀏覽器是否有支援CORS Request
 function makeReq(method, url) {
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     if ('withCredentials' in xhr) {
         xhr.open(method, url, true);
     } else {
@@ -56,7 +56,7 @@ xhr.send(null);
 // back to top
 
 function showToTop(e) {
-    var scrollPosition = $(window).scrollTop();
+    let scrollPosition = $(window).scrollTop();
     if (scrollPosition > scrollTrigger) {
         $('.toTop').addClass('show');
     } else {
@@ -79,9 +79,9 @@ toTop.addEventListener('click', returnToTop)
 function renderData(e) {
     e.preventDefault();
     if (xhr.status == 200) {
-        var responseText = JSON.parse(xhr.responseText);
-        var data = responseText.result.records;
-        var renderContent = '';
+        const responseText = JSON.parse(xhr.responseText);
+        const data = responseText.result.records;
+        let renderContent = '';
         content.firstElementChild.textContent = this.value;
         for (let i = 0; i < data.length; i++) {
             if (this.value === data[i].Zone) {
@@ -134,12 +134,12 @@ function renderData(e) {
 // 點擊下拉式選單來渲染資料
 
 function createOptionsListener() {
-    var dropDownList = document.querySelector('#select-area');
+    const dropDownList = document.querySelector('#select-area');
     dropDownList.addEventListener('change', renderData);
 }
 
 // 點擊熱門區來渲染資料資料
 
-var hotAreas = document.querySelectorAll('.hot button');
+const hotAreas = document.querySelectorAll('.hot button');
 
 hotAreas.forEach(hotArea => hotArea.addEventListener('click', renderData));

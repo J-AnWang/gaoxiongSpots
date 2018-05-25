@@ -288,7 +288,8 @@ body {
 #content .spots {
   margin-top: 25px; }
   #content .spots .col-two {
-    margin-bottom: 35px;
+    height: 320px;
+    margin-bottom: 15px;
     float: left;
     width: 49%;
     margin-left: .25%;
